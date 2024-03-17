@@ -15,7 +15,7 @@ export async function getRecipe(id) {
 
 export async function searchRecipes(query) {
   // return mockSearchResults.results
-
+  console.log("search recipes query:", query)
   const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=${process.env.API_KEY}&number=12`)
   if (response.status !== 200)
     return null
