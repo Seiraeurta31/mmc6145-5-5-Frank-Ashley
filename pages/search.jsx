@@ -9,13 +9,12 @@ import styles from '../styles/search.module.css'
 // TODO: destructure query from argument passed to getServerSideProps
 export async function getServerSideProps(context) {
   const props = {}
-  const searchTerm = context.query.q
-  console.log("SearchTerm: ", searchTerm)
+
   // TODO: use searchRecipes to attach recipes prop based on query parameter
+  const searchTerm = context.query.q
   if(searchTerm === undefined) return { props }
   const recipes = await searchRecipes(searchTerm)
-  console.log("recipes: ", recipes)
-  
+
   return { props: {recipes}}
 }
 
