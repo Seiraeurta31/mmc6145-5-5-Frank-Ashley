@@ -9,16 +9,10 @@ import styles from '../styles/search.module.css'
 // TODO: destructure query from argument passed to getServerSideProps
 export async function getServerSideProps({query}) {
   const props = {}
-  console.log("query", query)
+  // console.log("query", query)
   // TODO: use searchRecipes to attach recipes prop based on query parameter
   const recipes = await searchRecipes(query)
-  console.log(recipes)
-  // const recipes = data.results.map(({id, title, image, imageType}) => ({
-  //   id: id,
-  //   title: title,
-  //   image: image,
-  //   imageType: imageType,
-  // }))
+  // console.log(recipes)
   
   return { props: {recipes}}
 }
