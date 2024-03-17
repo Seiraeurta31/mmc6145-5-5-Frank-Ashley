@@ -8,8 +8,8 @@ import styles from '../../styles/recipe.module.css'
 export async function getServerSideProps({params: {id}}) {
   const props = {}
   // TODO: call getRecipe using id parameter and pass return value as recipeInfo prop
-  const recipeInfo = await getRecipe(id)
-  return { props: {recipeInfo} }
+  const recipeInfo = await getRecipe(id) 
+  return { props: {recipeInfo} } 
 }
 
 export default function Recipe({recipeInfo}) {
